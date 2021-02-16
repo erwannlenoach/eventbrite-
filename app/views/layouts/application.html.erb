@@ -6,11 +6,51 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    
   </head>
 
+  <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="nav-link"><%= link_to "Accueil", events_index_path %></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto"> 
+
+            <% if user_signed_in? %>
+            <li class="nav-item active">
+              <div class="nav-link"><%= link_to "Mon profil", user_path(current_user) %></div> 
+            </li>
+            <li class="nav-item">
+              <div class="nav-link"><%= link_to "Déconnexion", destroy_user_session_path, method: :delete%></div> 
+            </li>
+          <%else%>
+                <li class="nav-item active">
+                <div class="nav-link"><%= link_to "Créer un évènement", new_user_registration_path %></div> 
+                </li>
+                <li class="nav-item">
+                  <div class="nav-link"><%= link_to "S'inscrire", new_user_registration_path %></div> 
+                </li>
+                <li class="nav-item">
+                  <div class="nav-link"><%= link_to "Se connecter", new_user_session_path%></div> 
+                </li>
+              <% end %>
+              </ul>
+          </div>
+      </nav>
+  </header>
   <body>
-    <%= yield %>
+
+  <%= yield %>
   </body>
 </html>
+
+
