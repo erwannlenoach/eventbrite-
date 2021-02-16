@@ -1,5 +1,11 @@
 # README
 
+Eventbrita (clone of Eventbrite for THP) realized by Chenda Net & Erwann Le Noac'h 
+
+The link to the heroku app: 
+https://eventbrita.herokuapp.com/
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
