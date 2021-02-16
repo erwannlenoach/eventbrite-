@@ -1,1 +1,15 @@
 <h1>Liste des évènements</h1>
+<div class="row">
+<% @events.each do |event| %>  
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= event.title %></h5>
+        <p class="card-text"><%= event.description %></p>
+        <p class="card-text">created by : <%= event.admin.first_name %><%= event.admin.last_name %></p>
+        <button type="button" class="btn btn-warning"><%= link_to "show", event%></button>       
+        </div>
+    </div>
+  </div>
+  <% end %>
+</div>

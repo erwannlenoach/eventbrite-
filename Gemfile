@@ -59,4 +59,5 @@ gem 'letter_opener'
 gem 'dotenv-rails' 
 gem 'sendgrid-ruby'
 gem 'devise'
+gem 'faker'  
  

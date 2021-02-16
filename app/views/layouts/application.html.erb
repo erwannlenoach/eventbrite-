@@ -29,13 +29,13 @@
             <li class="nav-item active">
               <div class="nav-link"><%= link_to "Mon profil", user_path(current_user) %></div> 
             </li>
+            <li class="nav-item active">
+            <div class="nav-link"><%= link_to "Créer un évènement", new_event_path %></div> 
+            </li>
             <li class="nav-item">
               <div class="nav-link"><%= link_to "Déconnexion", destroy_user_session_path, method: :delete%></div> 
             </li>
           <%else%>
-                <li class="nav-item active">
-                <div class="nav-link"><%= link_to "Créer un évènement", new_user_registration_path %></div> 
-                </li>
                 <li class="nav-item">
                   <div class="nav-link"><%= link_to "S'inscrire", new_user_registration_path %></div> 
                 </li>
