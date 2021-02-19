@@ -2,6 +2,16 @@ require 'faker'
 
 
 10.times do 
+    User.create(
+        first_name: Faker::Name.first_name, 
+        last_name: Faker::Name.last_name, 
+        email: Faker::Internet.email,
+        description: Faker::TvShows::RickAndMorty,
+        password: Faker::String.random(length: 8)
+        )
+end 
+
+10.times do 
     Event.create(
        start_date: Faker::Date.between(from: 2.days.ago, to: Date.today), 
        duration: Faker::Number.between(from: 1, to: 100),
@@ -13,14 +23,5 @@ require 'faker'
         )
 end 
 
-10.times do 
-    User.create(
-        first_name: Faker::Name.first_name, 
-        last_name: Faker::Name.last_name, 
-        email: Faker::Internet.email,
-        description: Faker::TvShows::RickAndMorty,
-        password: Faker::String.random(length: 8)
-        )
-end 
 
 
